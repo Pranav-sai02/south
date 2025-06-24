@@ -40,7 +40,7 @@
   flex: 1 1 auto;
   min-width: 120px;
   max-width: 200px;
-  padding: 10px 16px;
+  padding: 10px 14px;
   color: #555;
   margin-right: 4px;
   background: linear-gradient(to bottom, #fdfdfd, #e0e0e0);
@@ -91,3 +91,31 @@
   font-size: 20px;
   color: #333;
 }
+
+.tab-header li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tab-close-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-right: 4px; /* small space to the left of X */
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0; /* prevents it from stretching the tab */
+}
+
+
+.tab-close-btn:hover {
+  color: #d32f2f;
+}
+

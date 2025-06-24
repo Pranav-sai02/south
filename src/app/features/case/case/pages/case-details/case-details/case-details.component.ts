@@ -6,6 +6,9 @@ import { CountryISO, PhoneNumberFormat, SearchCountryField } from 'ngx-intl-tel-
 import { ActivatedRoute } from '@angular/router';
 import { CaseDataService } from '../../../services/case-data-service/case-data.service';
 import { MatStepper } from '@angular/material/stepper';
+import { AddPhase1Component } from '../tab-components/add-phase1/add-phase1.component';
+import { AddPhase2Component } from '../tab-components/add-phase2/add-phase2.component';
+import { AddPhase3Component } from '../tab-components/add-phase3/add-phase3.component';
 
 @Component({
   selector: 'app-case-details',
@@ -34,13 +37,16 @@ export class CaseDetailsComponent implements OnInit {
   // activeIndex: number = 0;
   // completedSteps: boolean[] = [false, false, false, false, false];
 
-  tabs = [
-    { label: 'Caller' },
-    { label: 'Validation' },
-    { label: 'Voucher/SMS' },
-    { label: 'Complaints' },
-    { label: 'Documents' },
-  ];
+  // tabs = [
+  //   { label: 'Caller' },
+  //   { label: 'Validation' },
+  //   { label: 'Voucher/SMS' },
+  //   { label: 'Complaints' },
+  //   { label: 'Documents' },
+  //   { label: 'Add Phase 1', component: AddPhase1Component },
+  //   { label: 'Add Phase 1', component: AddPhase2Component },
+  //   { label: 'Add Phase 1', component: AddPhase3Component },
+  // ];
 
   selectedTab = 0;
 

@@ -22,11 +22,16 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
 import { CaseStagesComponent } from './case/pages/case-details/case-stages/case-stages.component';
 import { VehicleTrackerComponent } from './case/pages/case-details/vehicle-tracker/vehicle-tracker.component';
 import { CallTabsComponent } from './case/pages/case-details/call-tabs/call-tabs.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { AddPhase1Component } from './case/pages/case-details/tab-components/add-phase1/add-phase1.component';
+import { AddPhase2Component } from './case/pages/case-details/tab-components/add-phase2/add-phase2.component';
+import { AddPhase3Component } from './case/pages/case-details/tab-components/add-phase3/add-phase3.component';
+import { MatIconModule } from '@angular/material/icon';
+
+
 
 @NgModule({
   declarations: [
@@ -41,6 +46,9 @@ import { MatDividerModule } from '@angular/material/divider';
     CaseStagesComponent,
     VehicleTrackerComponent,
     CallTabsComponent,
+    AddPhase1Component,
+    AddPhase2Component,
+    AddPhase3Component,
   ],
   imports: [
     CommonModule,
@@ -61,8 +69,8 @@ import { MatDividerModule } from '@angular/material/divider';
     NgxIntlTelInputModule,
     MatExpansionModule,
     MatMenuModule,
-    MatIconModule,
     MatDividerModule,
+    MatIconModule
   ],
   exports: [CaseComponent, CaseDetailsComponent, CasePopupComponent],
 })

@@ -54,6 +54,9 @@ import { CaseModule } from './features/case/case.module';
 import { CustomButtonComponent } from './shared/component/custom-button/custom-button.component';
 import { CustomInputComponent } from './shared/component/custom-input/custom-input.component';
 
+import { MatIconModule } from '@angular/material/icon';
+
+
 
 ModuleRegistry.registerModules([AllEnterpriseModule]);
 
@@ -82,7 +85,7 @@ ModuleRegistry.registerModules([AllEnterpriseModule]);
     ClientPopupComponent,
     ConfirmDialogComponent,
     CustomButtonComponent,
-    CustomInputComponent
+    CustomInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -107,6 +110,7 @@ ModuleRegistry.registerModules([AllEnterpriseModule]);
     MatDialogModule,
     MatButtonModule,
     CaseModule,
+    MatIconModule,
   ],
   providers: [
     provideClientHydration(withEventReplay()),
