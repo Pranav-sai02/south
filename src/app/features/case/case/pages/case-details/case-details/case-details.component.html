@@ -1,0 +1,19 @@
+<div class="caller-container">
+  <app-case-stages></app-case-stages>
+
+  <app-vehicle-tracker></app-vehicle-tracker>
+  <div class="call-ref">
+    <p>
+      Case Reference Number: {{ caseRef || "N/A" }}
+      <span class="status">(Opened)</span>
+    </p>
+    <!-- <div>
+      <button>Contact History</button>
+      <button>About</button>
+      <button>Exit</button>
+      <button>SMS</button>
+      <button>Send Email</button>
+    </div> -->
+  </div>
+  <app-call-tabs></app-call-tabs>
+</div>

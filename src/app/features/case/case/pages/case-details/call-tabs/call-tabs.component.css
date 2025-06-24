@@ -1,0 +1,93 @@
+.tabs-wrapper {
+  width: 100%;
+  margin: 50px auto;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.tabs-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: -1px; /* closes gap above green-strip */
+}
+
+.tab-scroll-wrapper {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  scrollbar-width: none; 
+}
+
+.tab-scroll-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.tab-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.tab-header {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tab-header li {
+  flex: 1 1 auto;
+  min-width: 120px;
+  max-width: 200px;
+  padding: 10px 16px;
+  color: #555;
+  margin-right: 4px;
+  background: linear-gradient(to bottom, #fdfdfd, #e0e0e0);
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-top-right-radius: 70px;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.tab-header li:hover {
+  background: linear-gradient(to bottom, #f1f1f1, #d5d5d5);
+}
+
+.tab-header li.active {
+  background: linear-gradient(to bottom, #05b9bc, #05b9bc);
+  color: white;
+  border-color: #05b9bc;
+  z-index: 3;
+}
+
+.green-strip {
+  height: 7px;
+  background: #05b9bc;
+  border-radius: 0;
+  margin-top: -1px;
+  position: relative;
+}
+
+.tab-body {
+  background: #fff;
+  padding: 0;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  top: -1px;
+  z-index: 0;
+}
+
+.tab-body h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333;
+}

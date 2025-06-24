@@ -1,0 +1,51 @@
+<div class="tabs-wrapper">
+  <!-- Tabs header and 3-dots menu -->
+  <div class="tabs-header-container">
+    <!-- Scrollable tab list -->
+    <div class="tab-scroll-wrapper">
+      <ul class="tab-header">
+        <li
+          *ngFor="let tab of tabs; let i = index"
+          [class.active]="selectedTab === i"
+          (click)="selectTab(i)">
+          {{ tab.label }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Three-dot menu -->
+    <div class="tabs-menu">
+      <button mat-icon-button [matMenuTriggerFor]="tabMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #tabMenu="matMenu">
+        <button mat-menu-item (click)="onSelect()">Select</button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="addPhaseTab(1)">Add Phase 1</button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="addPhaseTab(2)">Add Phase 2</button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="addPhaseTab(3)">Add Phase 3</button>
+      </mat-menu>
+    </div>
+  </div>
+
+  <!-- Tab active underline -->
+  <div class="green-strip"></div>
+
+  <!-- Tab content area -->
+  <div class="tab-body">
+    <ng-container [ngSwitch]="selectedTab">
+      <app-caller *ngSwitchCase="0"></app-caller>
+      <app-validation *ngSwitchCase="1"></app-validation>
+      <app-voucher-sms *ngSwitchCase="2"></app-voucher-sms>
+      <app-complaints *ngSwitchCase="3"></app-complaints>
+      <app-documents *ngSwitchCase="4"></app-documents>
+
+      <div *ngSwitchDefault>
+        <h2 *ngIf="tabs[selectedTab]">{{ tabs[selectedTab].label }}</h2>
+        <p>This is a dynamically added tab.</p>
+      </div>
+    </ng-container>
+  </div>
+</div>
