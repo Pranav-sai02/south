@@ -11,8 +11,8 @@
           </span>
 
           <!-- Show close button only for dynamic tabs -->
-          <button *ngIf="i > 4" class="tab-close-btn" mat-icon-button (click)="closeTab(i); $event.stopPropagation()">
-            <mat-icon>close</mat-icon>
+          <button *ngIf="i > 4" class="tab-close-btn" (click)="closeTab(i); $event.stopPropagation()">
+            <i class="fas fa-times"></i> <!-- or use 'fa-trash' if you prefer -->
           </button>
         </li>
       </ul>
@@ -24,8 +24,6 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #tabMenu="matMenu">
-        <button mat-menu-item (click)="onSelect()">Select</button>
-        <mat-divider></mat-divider>
 
         <button mat-menu-item (click)="addPhaseTab(1)" [disabled]="isPhaseAdded(1)">Add Phase 1</button>
         <mat-divider></mat-divider>

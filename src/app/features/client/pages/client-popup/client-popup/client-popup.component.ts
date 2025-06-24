@@ -21,6 +21,8 @@ import {
   styleUrl: './client-popup.component.css',
 })
 export class ClientPopupComponent {
+  selectedTab = 0;
+
   separateDialCode = false;
   SearchCountryField = SearchCountryField;
   CountryISO = CountryISO;
