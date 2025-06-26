@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { BreadcrumbService } from './service/breadcrumb.service';
 
 @Component({
   selector: 'app-breadcrumb',
@@ -8,10 +9,11 @@ import { filter } from 'rxjs/operators';
   templateUrl: './breadcrumb.component.html',
   styleUrl: './breadcrumb.component.css',
 })
-export class BreadcrumbComponent {
+export class BreadcrumbComponent implements OnInit {
   currentPage: string = '';
   currentRoute: string = '';
   showPopup: boolean = false;
+  caseRef: string | null = null;
 
   private hideButtonRoutes: string[] = [
     '/area-codes',
@@ -22,32 +24,36 @@ export class BreadcrumbComponent {
     '/dashboard'
   ];
 
-  // ✅ Centralized popup configuration
-  // private popupMap: { [key: string]: string } = {
-  //   '/users': 'users',
-  //   '/service-provider/service-providers': 'service-providers',
-  //   '/service-provider/service-provider-types': 'service-provider-types',
-  // };
-
   constructor(
     private router: Router,
-
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private breadcrumbService: BreadcrumbService
   ) {}
 
   ngOnInit(): void {
+    // Subscribe to caseRef changes
+    this.breadcrumbService.caseRef$.subscribe((ref) => {
+      this.caseRef = ref;
+      this.updateBreadcrumb();
+    });
+
+    this.currentRoute = this.router.url;
     this.updateBreadcrumb();
 
+    // Subscribe to route changes
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.currentRoute = event.urlAfterRedirects;
+
+        // Clear caseRef if not on case-details page
+        if (!this.currentRoute.includes('/cases/case-details')) {
+          this.breadcrumbService.clearCaseRef();
+        }
+
         this.updateBreadcrumb();
       });
-    this.currentRoute = this.router.url; // Initialize currentRoute
   }
-
-
 
   updateBreadcrumb(): void {
     const breadcrumbs: string[] = [];
@@ -60,12 +66,18 @@ export class BreadcrumbComponent {
       if (routeSnapshot.data['breadcrumb']) {
         breadcrumbs.push(routeSnapshot.data['breadcrumb']);
       } else if (routeSnapshot.params['id']) {
-        // Optional: fetch name by ID for dynamic breadcrumbs
         breadcrumbs.push(`Details for ${routeSnapshot.params['id']}`);
       }
     }
 
     this.currentPage = breadcrumbs.join(' / ') || 'Dashboard / Home';
+
+    // Only show caseRef on case-details route
+    if (this.currentRoute.includes('/cases/case-details') && this.caseRef) {
+      this.currentPage += ` / ${this.caseRef}`;
+    }
+
+    console.log('[BreadcrumbComponent] Breadcrumb:', this.currentPage);
   }
 
   openPopup() {
@@ -78,7 +90,6 @@ export class BreadcrumbComponent {
 
   get activePopup(): string | null {
     if (this.currentRoute.includes('/users')) return 'users';
-    // if (this.currentRoute.includes('/area-codes')) return 'areacodes';
     if (this.currentRoute.includes('/services/service-providers'))
       return 'service-providers';
     if (this.currentRoute.includes('/services/service-types'))
@@ -87,7 +98,6 @@ export class BreadcrumbComponent {
       return 'services';
     if (this.currentRoute.includes('/client')) return 'client';
     if (this.currentRoute.includes('/cases')) return 'new';
-
     return null;
   }
 
@@ -96,12 +106,4 @@ export class BreadcrumbComponent {
       this.currentRoute.includes(route)
     );
   }
-  // ✅ Dynamically determine which popup to show based on route
-  // get activePopup(): string | null {
-  //   return (
-  //     Object.entries(this.popupMap).find(([path]) =>
-  //       this.currentRoute.includes(path)
-  //     )?.[1] || null
-  //   );
-  // }
 }

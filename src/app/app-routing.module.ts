@@ -13,6 +13,7 @@ import { AreaCodesComponent } from './features/areacodes/pages/area-codes/area-c
 
 import { ClientGroupComponent } from './features/client/pages/client-groups/client-group/client-group.component';
 import { ClientComponent } from './features/client/pages/client/client.component';
+import { BranchComponent } from './features/branch/component/branch.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -33,12 +34,20 @@ const routes: Routes = [
         title: 'Home',
         data: { breadcrumb: 'Home' },
       },
+      
       {
         path: 'dashboard',
         component: DashboardComponent,
         canActivate: [authGuard],
         title: 'Dashboard',
         data: { breadcrumb: 'Dashboard' },
+      },
+      {
+        path: 'branches',
+        component: BranchComponent,
+        canActivate: [authGuard],
+        title: 'Branches',
+        data: { breadcrumb: 'Branches' },
       },
       {
         path: 'claims',

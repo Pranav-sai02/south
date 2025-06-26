@@ -9,6 +9,7 @@ import { MatStepper } from '@angular/material/stepper';
 import { AddPhase1Component } from '../tab-components/add-phase1/add-phase1.component';
 import { AddPhase2Component } from '../tab-components/add-phase2/add-phase2.component';
 import { AddPhase3Component } from '../tab-components/add-phase3/add-phase3.component';
+import { BreadcrumbService } from '../../../../../../layouts/breadcrumb/service/breadcrumb.service';
 
 @Component({
   selector: 'app-case-details',
@@ -88,6 +89,7 @@ export class CaseDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private caseDataService: CaseDataService,
+    private breadcrumbService: BreadcrumbService 
     
   ) {}
 
@@ -96,6 +98,8 @@ export class CaseDetailsComponent implements OnInit {
       this.caseRef = params.get('callRef') ?? '';
       this.callerName = params.get('callerName') ?? '';
       this.client = params.get('client') ?? '';
+
+       this.breadcrumbService.setCaseRef(this.caseRef);
     });
 
     // Initialize the form with a client control

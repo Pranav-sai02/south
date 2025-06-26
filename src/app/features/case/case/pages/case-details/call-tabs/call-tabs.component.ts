@@ -22,6 +22,7 @@ export class CallTabsComponent {
     { label: 'Voucher/SMS', component: VoucherSmsComponent },
     { label: 'Complaints', component: ComplaintsComponent },
     { label: 'Documents', component: DocumentsComponent },
+    
   ];
 
   selectedTab = 0;
@@ -48,16 +49,16 @@ export class CallTabsComponent {
       this.selectedTab = this.tabs.length - 1;
     }
   }
-  closeTab(index: number): void {
-    this.tabs.splice(index, 1);
+  // closeTab(index: number): void {
+  //   this.tabs.splice(index, 1);
 
-    // Adjust selectedTab if it was the closed one or after it
-    if (this.selectedTab === index) {
-      this.selectedTab = Math.max(0, index - 1);
-    } else if (this.selectedTab > index) {
-      this.selectedTab--;
-    }
-  }
+  //   // Adjust selectedTab if it was the closed one or after it
+  //   if (this.selectedTab === index) {
+  //     this.selectedTab = Math.max(0, index - 1);
+  //   } else if (this.selectedTab > index) {
+  //     this.selectedTab--;
+  //   }
+  // }
   isPhaseAdded(phaseNumber: number): boolean {
     return this.tabs.some(tab => tab.label === `Add Phase ${phaseNumber}`);
   }

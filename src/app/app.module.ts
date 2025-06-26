@@ -57,6 +57,21 @@ import { CustomInputComponent } from './shared/component/custom-input/custom-inp
 import { MatIconModule } from '@angular/material/icon';
 
 
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
+
+
+import { ButtonModule } from 'primeng/button';
+import { StepperModule } from 'primeng/stepper';
+import { InputTextModule } from 'primeng/inputtext';
+import { ToggleButton } from 'primeng/togglebutton';
+import { IconField } from 'primeng/iconfield';
+import { InputIcon } from 'primeng/inputicon';
+
+import { BranchComponent } from './features/branch/component/branch.component';
+import { BranchesState } from './features/branch/state/branch.state';
+
+
 
 ModuleRegistry.registerModules([AllEnterpriseModule]);
 
@@ -86,6 +101,7 @@ ModuleRegistry.registerModules([AllEnterpriseModule]);
     ConfirmDialogComponent,
     CustomButtonComponent,
     CustomInputComponent,
+    BranchComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,13 +120,20 @@ ModuleRegistry.registerModules([AllEnterpriseModule]);
     }),
     ServiceProviderModule,
     NgxIntlTelInputModule,
-    NgxsModule.forRoot([AreaCodesState, ClientGroupState]),
+    NgxsModule.forRoot([AreaCodesState, ClientGroupState, BranchesState]),
     MatSnackBarModule,
 
     MatDialogModule,
     MatButtonModule,
     CaseModule,
     MatIconModule,
+
+    StepperModule,
+      ButtonModule,
+      InputTextModule,
+      ToggleButton,
+      IconField,
+      InputIcon,
   ],
   providers: [
     provideClientHydration(withEventReplay()),
@@ -123,6 +146,7 @@ ModuleRegistry.registerModules([AllEnterpriseModule]);
       provide: ErrorHandler,
       useClass: GlobalErrorHandler,
     },
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent],
 })

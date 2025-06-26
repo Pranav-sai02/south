@@ -15,7 +15,7 @@ const routes: Routes = [{
     path: 'case-details', // No :callRef
     component: CaseDetailsComponent,
     title: 'Case Details',
-    data: { breadcrumb: 'Call Centre / Cases / Case Det'  },
+    data: { breadcrumb: 'Call Centre / Cases / Case Details' },
   },
   {
     path: 'new',

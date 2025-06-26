@@ -99,11 +99,11 @@
   gap: 6px;
 }
 
-.tab-close-btn {
+/* .tab-close-btn {
   background: transparent;
   border: none;
   padding: 0;
-  margin-right: 4px; /* small space to the left of X */
+  margin-right: 4px; 
   cursor: pointer;
   line-height: 1;
   display: flex;
@@ -111,12 +111,12 @@
   justify-content: center;
   width: 16px;
   height: 16px;
-  flex-shrink: 0; /* prevents it from stretching the tab */
+  flex-shrink: 0;
   color: #444;
 }
 
 
 .tab-close-btn:hover {
   color: #d32f2f;
-}
+} */
 

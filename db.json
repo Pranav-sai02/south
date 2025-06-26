@@ -1,4 +1,17 @@
 {
+  "branches": [
+    {
+      "BranchId": 2,
+      "BranchCode": "BR002",
+      "BranchName": "Cape Town Regional",
+      "Location": "Cape Town",
+      "Type": "Regional",
+      "IsActive": true,
+      "Province": "Western Cape",
+      "Country": "South Africa",
+      "IsDeleted": false
+    }
+  ],
   "servicesPage": [
     {
       "id": "1",
@@ -97,8 +110,14 @@
       "IsAccreditedOn": "2024-03-01",
       "IsAccreditedby": "Cert Authority",
       "ContactDetails": [
-        { "Type": "Email", "Value": "contact@alphatransports.co.za" },
-        { "Type": "Phone", "Value": "+27 21 123 4567" }
+        {
+          "Type": "Email",
+          "Value": "contact@alphatransports.co.za"
+        },
+        {
+          "Type": "Phone",
+          "Value": "+27 21 123 4567"
+        }
       ]
     },
     {
@@ -126,8 +145,14 @@
       "IsAccreditedOn": "2024-01-20",
       "IsAccreditedby": "Cert Body",
       "ContactDetails": [
-        { "Type": "Email", "Value": "support@zetalogistics.com" },
-        { "Type": "Phone", "Value": "+27 11 876 5432" }
+        {
+          "Type": "Email",
+          "Value": "support@zetalogistics.com"
+        },
+        {
+          "Type": "Phone",
+          "Value": "+27 11 876 5432"
+        }
       ]
     },
     {
@@ -154,7 +179,12 @@
       "IsAccredited": false,
       "IsAccreditedOn": "",
       "IsAccreditedby": "",
-      "ContactDetails": [{ "Type": "Phone", "Value": "+27 31 432 1234" }]
+      "ContactDetails": [
+        {
+          "Type": "Phone",
+          "Value": "+27 31 432 1234"
+        }
+      ]
     },
     {
       "id": 4,
@@ -180,7 +210,12 @@
       "IsAccredited": false,
       "IsAccreditedOn": "",
       "IsAccreditedby": "",
-      "ContactDetails": [{ "Type": "Email", "Value": "urban@cargo.co.za" }]
+      "ContactDetails": [
+        {
+          "Type": "Email",
+          "Value": "urban@cargo.co.za"
+        }
+      ]
     },
     {
       "id": 5,
@@ -207,8 +242,14 @@
       "IsAccreditedOn": "2024-05-15",
       "IsAccreditedby": "Transport Council",
       "ContactDetails": [
-        { "Type": "Email", "Value": "info@greenhaulers.co.za" },
-        { "Type": "Phone", "Value": "+27 51 777 2233" }
+        {
+          "Type": "Email",
+          "Value": "info@greenhaulers.co.za"
+        },
+        {
+          "Type": "Phone",
+          "Value": "+27 51 777 2233"
+        }
       ]
     },
     {
@@ -236,8 +277,14 @@
       "IsAccreditedOn": "2024-02-08",
       "IsAccreditedby": "Accreditor A",
       "ContactDetails": [
-        { "Type": "Email", "Value": "support@logitrack.co.za" },
-        { "Type": "Phone", "Value": "+27 12 555 6677" }
+        {
+          "Type": "Email",
+          "Value": "support@logitrack.co.za"
+        },
+        {
+          "Type": "Phone",
+          "Value": "+27 12 555 6677"
+        }
       ]
     },
     {
@@ -264,7 +311,12 @@
       "IsAccredited": true,
       "IsAccreditedOn": "2024-04-21",
       "IsAccreditedby": "Quality Team",
-      "ContactDetails": [{ "Type": "Phone", "Value": "+27 44 321 0987" }]
+      "ContactDetails": [
+        {
+          "Type": "Phone",
+          "Value": "+27 44 321 0987"
+        }
+      ]
     },
     {
       "id": 8,
@@ -290,7 +342,12 @@
       "IsAccredited": false,
       "IsAccreditedOn": "",
       "IsAccreditedby": "",
-      "ContactDetails": [{ "Type": "Email", "Value": "info@secureship.co.za" }]
+      "ContactDetails": [
+        {
+          "Type": "Email",
+          "Value": "info@secureship.co.za"
+        }
+      ]
     },
     {
       "id": 9,
@@ -317,8 +374,14 @@
       "IsAccreditedOn": "2024-02-26",
       "IsAccreditedby": "National Logistics Board",
       "ContactDetails": [
-        { "Type": "Phone", "Value": "+27 53 881 1234" },
-        { "Type": "Email", "Value": "metro@freight.co.za" }
+        {
+          "Type": "Phone",
+          "Value": "+27 53 881 1234"
+        },
+        {
+          "Type": "Email",
+          "Value": "metro@freight.co.za"
+        }
       ]
     },
     {
@@ -345,7 +408,12 @@
       "IsAccredited": false,
       "IsAccreditedOn": "",
       "IsAccreditedby": "",
-      "ContactDetails": [{ "Type": "Email", "Value": "eco@move.co.za" }]
+      "ContactDetails": [
+        {
+          "Type": "Email",
+          "Value": "eco@move.co.za"
+        }
+      ]
     },
     {
       "id": 11,
@@ -371,7 +439,12 @@
       "IsAccredited": false,
       "IsAccreditedOn": "",
       "IsAccreditedby": "",
-      "ContactDetails": [{ "Type": "Phone", "Value": "+27 43 201 2222" }]
+      "ContactDetails": [
+        {
+          "Type": "Phone",
+          "Value": "+27 43 201 2222"
+        }
+      ]
     },
     {
       "id": 12,
@@ -397,7 +470,12 @@
       "IsAccredited": true,
       "IsAccreditedOn": "2024-04-10",
       "IsAccreditedby": "Accreditor Y",
-      "ContactDetails": [{ "Type": "Email", "Value": "info@globalreach.co.za" }]
+      "ContactDetails": [
+        {
+          "Type": "Email",
+          "Value": "info@globalreach.co.za"
+        }
+      ]
     },
     {
       "id": 13,
@@ -424,8 +502,14 @@
       "IsAccreditedOn": "2024-06-04",
       "IsAccreditedby": "National Board",
       "ContactDetails": [
-        { "Type": "Phone", "Value": "+27 14 123 4567" },
-        { "Type": "Email", "Value": "kings@freight.co.za" }
+        {
+          "Type": "Phone",
+          "Value": "+27 14 123 4567"
+        },
+        {
+          "Type": "Email",
+          "Value": "kings@freight.co.za"
+        }
       ]
     },
     {
@@ -452,7 +536,12 @@
       "IsAccredited": false,
       "IsAccreditedOn": "",
       "IsAccreditedby": "",
-      "ContactDetails": [{ "Type": "Email", "Value": "help@rapidx.co.za" }]
+      "ContactDetails": [
+        {
+          "Type": "Email",
+          "Value": "help@rapidx.co.za"
+        }
+      ]
     },
     {
       "id": 15,
@@ -478,7 +567,12 @@
       "IsAccredited": false,
       "IsAccreditedOn": "",
       "IsAccreditedby": "",
-      "ContactDetails": [{ "Type": "Phone", "Value": "+27 54 999 8888" }]
+      "ContactDetails": [
+        {
+          "Type": "Phone",
+          "Value": "+27 54 999 8888"
+        }
+      ]
     }
   ],
   "serviceProviderTypes": [
